@@ -1,11 +1,10 @@
-
 <p style="font-size:14px" align="right">
 <a href="https://t.me/GenzDrops" target="_blank">Join our telegram <img src="https://user-images.githubusercontent.com/50621007/183283867-56b4d69f-bc6e-4939-b00a-72aa019d1aea.png" width="30"/></a>
 
 
 
-# How to join Munchain network
-## Infrastructure
+# How to join Munchain network / Guide to run Node 
+## Spec Machine
 ```
 **Recommended configuration:**
 - Number of CPUs: 4
@@ -15,6 +14,12 @@
 Static IP address
 - The recommended configuration from AWS is the equivalent of a t2.large machine
 with 300GB EBS attached storage.
+```
+## Allow Port
+```
+ufw allow 26656
+ufw allow 26657
+ufw enable
 ```
 
 ## Installing prerequisites
@@ -74,7 +79,9 @@ mund keys add [wallet_name] --keyring-backend test
 ```
 
 ## Fetch genesis.json from genesis node
+```
 curl --tlsv1 https://node1.mun.money/genesis? | jq ".result.genesis" > ~/.mun/config/genesis.json
+```
 
 ## Update seed in config.toml to make p2p connection
 ```
@@ -140,8 +147,9 @@ sudo systemctl start mund
 
 ## Verify node is running properly
 ```
-mund status
+mund status |& jq
 ```
+
 
 ## After buying TMUN, stake it to become a validator.
 **Tips**
