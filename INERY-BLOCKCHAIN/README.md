@@ -117,6 +117,10 @@ cd; source .bashrc; cd -
 RUN LITE NODE :
 >[RUN LITE](https://github.com/Genz22/node_run_with_genz/blob/main/INERY-BLOCKCHAIN/Lite%20Node.md)
 
+RUN MASTER NODE :
+>[RUN MASTER NODE](https://github.com/Genz22/node_run_with_genz/blob/main/INERY-BLOCKCHAIN/master%20node.md)
+
+
 
 
 
