@@ -112,6 +112,12 @@ chmod +x ine.py
 cd; source .bashrc; cd -
 ```
 
+## CHOOSE 1 
+
+RUN LITE NODE :
+>[RUN LITE](https://github.com/Genz22/node_run_with_genz/blob/main/INERY-BLOCKCHAIN/Lite%20Node.md)
+
+
 
 
 
