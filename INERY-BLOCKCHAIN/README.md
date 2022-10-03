@@ -3,6 +3,8 @@
 
 # HOW TO RUN NODE
 
+Official guide : https://docs.inery.io/docs/category/introduction
+
 ## Node Requirements
 
 ### Hardware Requirements
