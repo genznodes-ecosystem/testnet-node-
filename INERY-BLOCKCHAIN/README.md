@@ -120,6 +120,10 @@ RUN LITE NODE :
 RUN MASTER NODE :
 >[RUN MASTER NODE](https://github.com/Genz22/node_run_with_genz/blob/main/INERY-BLOCKCHAIN/master%20node.md)
 
+## TASK INERY 
+
+TASK 1 :
+>[GUIDE TASK 1]
 
 
 
