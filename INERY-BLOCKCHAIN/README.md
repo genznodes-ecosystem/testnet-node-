@@ -124,10 +124,10 @@ RUN MASTER NODE :
 
 ## TASK INERY | MASTER NODE
 
-TASK 1 :
+TASK 1 : Master Approval
 >[GUIDE TASK 1](https://github.com/Genz22/node-note/blob/main/INERY-BLOCKCHAIN/task-1-inery.md)
 
-TASK 2 :
+TASK 2 : Make urrency and transfer to someone 
 >[GUIDE TASK 2]
 
 
