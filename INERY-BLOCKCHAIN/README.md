@@ -128,7 +128,7 @@ TASK 1 : Master Approval
 >[GUIDE TASK 1](https://github.com/Genz22/node-note/blob/main/INERY-BLOCKCHAIN/task-1-inery.md)
 
 TASK 2 : Make urrency and transfer to someone 
->[GUIDE TASK 2]
+>[GUIDE TASK 2](https://github.com/Genz22/Testnet-node/blob/main/INERY-BLOCKCHAIN/task-2-inery.md)
 
 
 
