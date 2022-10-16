@@ -14,7 +14,7 @@ Therefore, you have more options for deploying the node based on your demands. l
 * Hard Disk: Capacity 500GB or more.
 * Network bandwidth: 6M uplink and downlink peer-to-peer rate or higher
 
-## Prepare Account Wormholes
+## Prepare
 
 First generate your own account through [WORMHOLES WALLET](https://www.limino.com/).
 
@@ -22,6 +22,11 @@ First generate your own account through [WORMHOLES WALLET](https://www.limino.co
 Please make sure you have at least 70,000 ERB otherwise you cannot become a miner,
 others please go to [Discord](https://discord.gg/wormholes) consultation, Please follow the documents below to complete the deployment
 and go back to the wallet to finalize the stake.
+
+Update Machine
+```
+sudo apt update && sudo apt upgrade -y
+```
 
 ## Run Node 
 
@@ -72,6 +77,13 @@ curl -X POST -H 'Content-Type:application/json' --data '{"jsonrpc":"2.0","method
 ```
 curl -X POST -H "Content-Type:application/json" --data '{"jsonrpc":"2.0","method":"eth_version","id":64}' http://127.0.0.1:8545
 ```
+
+* Check Nodekey must be the same as your wallet's private key
+```
+cat /wm/.wormholes/wormholes/nodekey
+```
+
+If not same You can try with `./start.sh`
 
 ## Monitor Your Node 
 
