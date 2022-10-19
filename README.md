@@ -1,2 +1,3 @@
-## not professional :)
+# Hi
 
+just a simple note
