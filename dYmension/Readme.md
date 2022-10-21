@@ -1,4 +1,4 @@
-# dYmension Local test
+# dYmension
 
 ## Minimum Requirements
 
