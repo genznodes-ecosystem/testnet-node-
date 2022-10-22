@@ -32,7 +32,7 @@ sudo apt update && sudo apt upgrade -y
 
 * Install docker
 ```
-sudo apt install doker.io -y
+sudo apt install docker.io -y
 ```
 
 * Open Port (opsional)
