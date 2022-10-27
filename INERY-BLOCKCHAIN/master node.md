@@ -65,7 +65,7 @@ cd inery-node/inery.setup/master.node
 ```
 
 ```
-cline wallet create --file Wallet.txt
+cline wallet create -n <name wallet> --file Wallet.txt
 ```
 
 Now you created your default wallet with password saved in "Wallet.txt" file In order to use wallet, 
