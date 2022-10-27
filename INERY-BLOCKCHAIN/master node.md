@@ -78,7 +78,7 @@ cline wallet unlock --password WALLET_PASSWORD
 After wallet is unlocked, import your account's private key, replacing MASTER_PRIVATE_KEY with private key of your account, by executing command :
 
 ```
-cline wallet import --private-key MASTER_PRIVATE_KEY
+cline wallet import --private-key MASTER_PRIVATE_KEY -n <name wallet>
 ```
 
 Now you can register and approve your account as Master (block producer)
