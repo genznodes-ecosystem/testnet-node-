@@ -37,6 +37,10 @@ cd inery-node/inery.setup
 ```
 
 ```
+screen -R master
+```
+
+```
 ./ine.py --master
 ```
 
@@ -101,7 +105,7 @@ cd inery-node/inery.setup/master.node
 ```
 
 
-## Clean 
+## Clean Blockchain 
 
 ```
 ./clean.sh
