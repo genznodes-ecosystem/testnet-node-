@@ -84,5 +84,5 @@ wget https://tea.thepower.io/teaclient
 chmod +x teaclient
 ```
 
-- start client
+- Start client
 
