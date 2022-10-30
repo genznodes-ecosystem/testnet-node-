@@ -86,3 +86,31 @@ chmod +x teaclient
 
 - Start client
 
+if u get token from bot 
+
+
+example : ![Screenshot (269)](https://user-images.githubusercontent.com/94878333/198863606-4f532a1c-699c-43d2-83df-edbac2056827.jpg)
+
+You can run teaclient 
+
+```
+screen -R client
+```
+
+```
+./teaclient -n <node name> <token>
+```
+
+- close 
+
+`CTRL A + D`
+
+- cek log teaclient
+
+```
+screen -rd client
+```
+
+close `CTRL A + D`
+
+===============================
