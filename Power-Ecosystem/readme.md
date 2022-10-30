@@ -50,6 +50,12 @@ https://medium.com/the-power-official-blog/deinfra-testnet-verification-and-test
 wget -O start-node.sh https://raw.githubusercontent.com/Genz22/Testnet-node/main/Power-Ecosystem/start-node.sh && chmod +x start-node.sh && ./start-node.sh
 ```
 
+- check docker 
+
+```
+docker ps
+```
+
 - Check node
 
 ```
