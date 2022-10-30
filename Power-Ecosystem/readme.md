@@ -42,5 +42,47 @@ https://medium.com/the-power-official-blog/deinfra-testnet-verification-and-test
 5. You have to maintain a minimum of 50% of node uptime on a monthly basis to be awarded with points (minimum for 3 months from the start of their specific Chain)
 6. Follow our Telegram chat, Twitter and GitHub for the entire period of DeInfra Testnet
 
+### Run node
 
+- Download and run ( automatic ) 
+
+```
+wget -O start-node.sh https://raw.githubusercontent.com/Genz22/Testnet-node/main/Power-Ecosystem/start-node.sh && chmod +x start-node.sh && ./start-node.sh
+```
+
+- Check node
+
+```
+curl http://<YOUR IP>:44000/api/node/status | jq
+```
+
+- send to bot
+
+```
+http://YourIP:44000/api/node/status
+```
+
+bot will confirm and added you in testnet waitlist so waiting for tea-client token form bot
+
+### Get the Tea Ceremony client and token | start tea-client
+
+- install screen 
+
+```
+sudo apt install screen 
+```
+
+- Get the Tea Ceremony client
+
+```
+wget https://tea.thepower.io/teaclient
+```
+
+- Give perms
+
+```
+chmod +x teaclient
+```
+
+- start client
 
