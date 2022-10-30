@@ -21,7 +21,7 @@ The most important thing. This is Rover’s home address: https://t.me/thepoweri
 
 Find more details in blog on Medium
 
-https://medium.com/the-power-official-blog/deinfra-testnet-verification-and-test-assignment-in-the-community-bot-are-launched-today-b253f397b1fa)We wish each of you good luck, folks! 👐
+https://medium.com/the-power-official-blog/deinfra-testnet-verification-and-test-assignment-in-the-community-bot-are-launched-today-b253f397b1fa We wish each of you good luck, folks! 👐
 
 
 
