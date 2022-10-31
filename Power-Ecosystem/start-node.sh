@@ -37,6 +37,6 @@ echo "===================================================" && sleep 1
 
 # run node
 
-docker run -d -p 44000:44000 --name testnet thepowerio/tpnode
+docker run -d -p 44000:44000 --name power thepowerio/tpnode
 
 echo "=======================DONE============================"
