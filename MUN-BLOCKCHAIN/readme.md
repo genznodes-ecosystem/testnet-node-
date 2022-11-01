@@ -164,3 +164,18 @@ Or visit https://blockexplorer.mun.money
 ```
 mund tx staking create-validator --from [wallet_name] --moniker [moniker_name] --pubkey $(mund tendermint show-validator) --chain-id testmun --keyring-backend test --amount 50000000000utmun --commission-max-change-rate 0.01 --commission-max-rate 0.2 --commission-rate 0.1 --min-self-delegation 1 --fees 200000utmun --gas auto --gas=auto --gas-adjustment=1.5 -y
 ```
+
+
+## vote to our upgrade proposal and install the upgrade manager with the new binaries
+
+- vote 
+
+```
+mund tx gov vote number <proposal> yes --from [wallet_name] --keyring-backend test --chain-id testmun -y
+```
+
+- upgrade node
+
+```
+wget -O update.sh https://raw.githubusercontent.com/munblockchain/mun/main/mupgrade.sh && chmod +x update.sh && sh update.sh
+```
