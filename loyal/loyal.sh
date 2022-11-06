@@ -54,6 +54,7 @@ sleep 1
 
 echo -e "\e[1m\e[32m CLONE... \e[0m" && sleep 1
 cd $HOME
+rm -rf .loyal
 wget https://github.com/LoyalLabs/loyal/releases/download/v0.25.1/loyal_v0.25.1_linux_amd64.tar.gz
 tar xzf loyal_v0.25.1_linux_amd64.tar.gz
 chmod 775 loyald
