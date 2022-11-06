@@ -57,7 +57,7 @@ cd $HOME
 wget https://github.com/LoyalLabs/loyal/releases/download/v0.25.1/loyal_v0.25.1_linux_amd64.tar.gz
 tar xzf loyal_v0.25.1_linux_amd64.tar.gz
 chmod 775 loyald
-sudo mv loyal /usr/local/bin/
+sudo mv loyald /usr/local/bin/
 sudo rm loyal_v0.25.1_linux_amd64.tar.gz
 
 sleep 1
