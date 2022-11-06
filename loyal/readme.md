@@ -8,7 +8,7 @@
 # HOW TO JOIN LOYAL TESTNET
 
 OFFICIAL DOCS
->(OFFICIAL)[https://docs.joinloyal.io/]
+>![OFFICIAL](https://docs.joinloyal.io/)
 
 ## Install automatic
 
