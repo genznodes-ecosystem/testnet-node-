@@ -2,7 +2,7 @@
 
 
 echo "=================================================="
-echo -e "\033[0;35m"
+echo -e "\033[0;34m"
 echo " ██████╗ ███████╗███╗   ██╗███████╗███╗   ██╗ ██████╗ ██████╗ ███████╗███████╗";
 echo "██╔════╝ ██╔════╝████╗  ██║╚══███╔╝████╗  ██║██╔═══██╗██╔══██╗██╔════╝██╔════╝";
 echo "██║  ███╗█████╗  ██╔██╗ ██║  ███╔╝ ██╔██╗ ██║██║   ██║██║  ██║█████╗  ███████╗";
@@ -21,7 +21,6 @@ if [ ! $NODENAME ]; then
 fi
 
 echo -e "Nama Node: \e[1m\e[32m$NODENAME\e[0m"
-echo -e "Nama Wallet: \e[1m\e[32m$LYL_WALLET\e[0m"
 echo -e "Chain ID: \e[1m\e[32mloyal-1\e[0m"
 echo '================================================='
 
@@ -58,7 +57,7 @@ cd $HOME
 wget https://github.com/LoyalLabs/loyal/releases/download/v0.25.1/loyal_v0.25.1_linux_amd64.tar.gz
 tar xzf loyal_v0.25.1_linux_amd64.tar.gz
 chmod 775 loyald
-sudo mv loyald /usr/local/bin/
+sudo mv loyal /usr/local/bin/
 sudo rm loyal_v0.25.1_linux_amd64.tar.gz
 
 sleep 1
@@ -105,7 +104,7 @@ indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.loyal/config/config.toml
 
 # Reset blockchain history
-$LYL tendermint unsafe-reset-all --home $HOME/.loyald
+loyald tendermint unsafe-reset-all --home $HOME/.loyal
 
 echo -e "\e[1m\e[32m CREATE SERVICE FILE... \e[0m" && sleep 1
 # create service
@@ -115,7 +114,7 @@ Description=loyald
 After=network.target
 [Service]
 Type=simple
-User=$USER
+User=root
 ExecStart=$(which loyald) start
 Restart=on-failure
 RestartSec=10
