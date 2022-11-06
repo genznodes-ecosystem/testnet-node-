@@ -44,4 +44,71 @@ loyald keys add wallet --recover
 loyald keys list
 ```
 
-##
+- valoper 
+
+```
+loyald keys show wallet --bech val -a
+```
+
+## Create validator
+
+- faucet 
+
+```
+curl -X POST "https://faucet.joinloyal.io/" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"address\": \",address>\", \"coins\": [ \"2000000ulyl\" ]}"
+```
+
+- create validator
+
+```
+loyald tx staking create-validator \
+  --amount 10000000ulyl \
+  --from wallet \
+  --commission-max-rate "0.2" \
+  --commission-rate "0.05" \
+  --pubkey  $(loyald tendermint show-validator) \
+  --moniker $NODENAME \
+  --chain-id loyal-1 \
+  --gas auto -y
+```
+
+- explore 
+
+https://ping-pub.joinloyal.io/loyal/staking
+
+## Command
+
+- check logs
+
+```
+journalctl -fu loyald -o cat
+```
+
+- stop node
+
+```
+systemctl stop loyald
+```
+
+- restart node
+
+```
+systemctl restart loyald
+```
+
+- Check status 
+
+```
+loyald status |& jq
+```
+
+## Delete node 
+
+```
+sudo systemctl stop loyald
+sudo systemctl disable loyald
+sudo rm -rf /etc/systemd/system/loyald* 
+sudo rm -rf $(which loyald) 
+sudo rm -rf $HOME/.loyal* 
+sudo rm -rf $HOME/loyal* 
+```
