@@ -69,7 +69,8 @@ loyald tx staking create-validator \
   --pubkey  $(loyald tendermint show-validator) \
   --moniker $NODENAME \
   --chain-id loyal-1 \
-  --gas auto -y
+  --gas auto \
+  --commission-max-change-rate "0.01"
 ```
 
 - explore 
