@@ -103,6 +103,16 @@ systemctl restart loyald
 loyald status |& jq
 ```
 
+- unjail
+
+```
+loyald tx slashing unjail \
+>   --broadcast-mode=block \
+>   --from=wallet \
+>   --chain-id=nibiru-testnet-1 \
+>   --gas=auto
+```
+
 ## Delete node 
 
 ```
