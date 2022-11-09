@@ -149,3 +149,22 @@ Again in the Network → Staking → Accounts section: after you have successful
 </p>
 
 You need to choose the commission percentage (the higher value you choose, the less incentive the nominators will have to choose you) and you are ready to validate!
+
+### Registering as a validator on Testnet
+
+- Go to https://validators.alephzero.org/
+    and enter detail 
+
+- How to Finding PeerId
+
+```
+cd aleph-node-runner
+./signer.sh
+```
+
+output :
+>PeerId: 12D3KooWFGUSW3DMq9xxxxxxxxxxxxxxx
+>
+>Public key: 08011220xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+>
+>Signed message: 7f5c63905axxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
