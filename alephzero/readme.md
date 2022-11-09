@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img height="100" height="auto" src="/assets/Untitled.png">
+  <img height="100" height="auto" src="https://user-images.githubusercontent.com/94878333/200793599-be61658c-27d7-4de6-957c-79b43740ae2a.png">
 </p>
 
 # Running an Aleph Node on Testnet
