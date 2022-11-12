@@ -155,7 +155,7 @@ Pre-requiretments :
 - automatic build node
 
 ```
-
+wget -O thepower.sh https://raw.githubusercontent.com/Genz22/Testnet-node/main/Power-Ecosystem/thepower.sh && chmod +x thepower.sh && ./thepower.sh
 ```
 
 - create directory and edit node.config
