@@ -121,6 +121,8 @@ screen -R client
 
 `CTRL A + D`
 
+waiting for all participants to finish teaclient
+
 - check logs teaclient
 
 ```
@@ -133,9 +135,9 @@ and you got :
 - node.config 
 - genesis.txt
 
+save file nad backup
 
-save file
-
+---------------------------------------
 
 ## Build thepower node and run
 
