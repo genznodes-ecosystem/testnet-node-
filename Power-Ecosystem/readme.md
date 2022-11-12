@@ -142,6 +142,11 @@ Here you have two options:
 - Download the source code and build it (only for advanced users). Recommended to use Ubuntu 22
 >[OFFICIAL DOCS](https://doc.thepower.io/docs/Community/phase-1/download-build-run-source)
 
+-------------------------------------------------------------------------------------
+
+### Build from docker
+
+>[docker (recommended)](https://doc.thepower.io/docs/Community/phase-1/download-build-run-docker)
 
 ### Build from source code
 
@@ -150,15 +155,14 @@ Pre-requiretments :
 1. ubuntu 22.04.1 LTS
 2. Erlang 24 or more
 
--------------------------------------------------------------------------------------
 
-- automatic build node
+#### automatic build node
 
 ```
 wget -O thepower.sh https://raw.githubusercontent.com/Genz22/Testnet-node/main/Power-Ecosystem/thepower.sh && chmod +x thepower.sh && ./thepower.sh
 ```
 
-- create directory and edit node.config
+#### create directory and edit node.config
 
 ```
 cd /opt/thepower
@@ -223,7 +227,9 @@ edit with example :
 {privkey, "<PRIVATE_KEY>"}.
 ```
 
-- Get ssl
+#### Get ssl
+
+- get acme.sh
 
 ```
 cd
@@ -231,28 +237,22 @@ apt-get install socat
 curl https://get.acme.sh | sh -s email=my@example.com
 ```
 
-close terminal 
+- close terminal 
 
-login again
+- login again
 
 ```
 source ~/.bashrc
 ```
 
-Obtain the certificate
+- Obtain the certificate
 
 ```
 acme.sh --server letsencrypt --issue --standalone -d <name host> \
 --renew-hook "cd /opt/thepower; ./stop.sh; ./start.sh"
 ```
 
-get certificate
-
-```
-acme.sh --info -d <your node.example.com>
-```
-
-Install the certificate
+- Install the certificate
 
 ```
 acme.sh --install-cert -d <host name> \
@@ -260,35 +260,42 @@ acme.sh --install-cert -d <host name> \
 --key-file /opt/thepower/db/cert/<host name>.key
 ```
 
-- run node
+- get certificate
+
+```
+acme.sh --info -d <your node.example.com>
+```
+
+#### run node
 
 ```
 systemctl restart powerd
 journalctl -fu powerd -o cat
 ```
 
-- check node
+#### check node
 
 ```
 curl http://localhost:1080/api/node/status | jq
 ```
 
-- check ssl 
+#### check ssl 
 
-open your browser
+- open your browser
 
 ```
 https://<host name>:1443/api/node/status
 ```
 
 >example : https://c1026n3.thepower.io:1443/api/node/status
+<img height="auto" width="auto" src="https://user-images.githubusercontent.com/94878333/201460184-6bc4877f-1486-439b-a3cc-51c543c539a8.png">
 
 Explore :
 https://zabbix.thepower.io/zabbix.php?action=dashboard.view
 
 find your host ..
 
-- complete rover bot
+#### complete rover bot
 
 <img src="https://user-images.githubusercontent.com/94878333/201459717-a973bac9-5ffc-4848-b40f-6fd16afd7474.png">
 
