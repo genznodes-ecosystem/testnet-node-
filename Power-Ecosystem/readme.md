@@ -135,6 +135,12 @@ save file
 
 ## Build thepower node and run
 
+>**important before building node** 🧨 :
+>
+>- you already have node.config and genesis
+>
+>- follow rover bot
+
 Here you have two options:
 
 - Download ThePower node using the Docker (recommended for most users),
