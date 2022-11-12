@@ -281,6 +281,8 @@ open your browser
 https://<host name>:1443/api/node/status
 ```
 
+>example : https://c1026n3.thepower.io:1443/api/node/status
+
 Explore :
 https://zabbix.thepower.io/zabbix.php?action=dashboard.view
 
