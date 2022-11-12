@@ -70,6 +70,8 @@ http://YourIP:44000/api/node/status
 
 bot will confirm and added you in testnet waitlist so waiting for tea-client token form bot
 
+you can stop node
+
 ### Get the Tea Ceremony client and token | start tea-client
 
 - install screen 
