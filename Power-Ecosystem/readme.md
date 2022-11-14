@@ -23,6 +23,10 @@ Find more details in blog on Medium
 
 https://medium.com/the-power-official-blog/deinfra-testnet-verification-and-test-assignment-in-the-community-bot-are-launched-today-b253f397b1fa We wish each of you good luck, folks! 👐
 
+-------------------------
+
+guide in INDONESIAN 👇👇
+>[INDONESIAN](https://github.com/Genz22/Testnet-node/blob/main/Power-Ecosystem/IDreadme.md)
 
 
 # First need go to bot and complete task
