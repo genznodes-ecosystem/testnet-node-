@@ -25,7 +25,7 @@ echo -e "\e[1m\e[32mInstalling docker... \e[0m" && sleep 1
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-sudo apt update && sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin && sudo apt install docker-compose
+sudo apt update && sudo apt install docker-ce docker-ce-cli containerd.io -y
 
 # download image
 
