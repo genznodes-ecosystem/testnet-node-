@@ -13,30 +13,42 @@ sleep 4
 
 echo -e "\e[1m\e[32mUpdating and install packages... \e[0m" && sleep 1
 
-# update
 sudo apt update && sudo apt upgrade -y
 
-echo -e "\e[1m\e[32mInstalling dependencies... \e[0m" && sleep 1
+echo -e "\e[1m\e[32minstall erlang and update dependencies... \e[0m" && sleep 2
 
-apt install git libssl-dev clang cmake make curl automake autoconf libncurses5-dev gcc g++ erlang elixir
+sudo apt purge erlang* -y
 
-echo -e "\e[1m\e[32mInstalling docker... \e[0m" && sleep 1
+apt install cmake clang gcc git curl libssl-dev build-essential automake autoconf libncurses5-dev elixir erlang -y
 
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-sudo apt update && sudo apt install docker-ce docker-ce-cli containerd.io -y
+echo -e "\e[1m\e[32mDownload and build the node... \e[0m" && sleep 1
+# Build node
+cd $HOME
+git clone https://github.com/thepower/tpnode.git -b e24
+cd tpnode
+./rebar3 get-deps
+./rebar3 compile
+./rebar3 release
+cp -r _build/default/rel/thepower /opt
 
-# download image
+echo -e "\e[1m\e[32mcreate service file... \e[0m" && sleep 1
+sudo tee /etc/systemd/system/powerd.service > /dev/null <<EOF
+[Unit]
+Description=powerd
+After=network.target
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/opt/thepower/bin/thepower foreground
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
 
-echo -e "\e[1m\e[32mDownload image... \e[0m" && sleep 1
+sudo systemctl daemon-reload
+sudo systemctl enable powerd.service
 
-docker pull thepowerio/tpnode
-
-echo "===================================================" && sleep 1
-
-# run node
-
-docker run -d -p 44000:44000 --name power thepowerio/tpnode
-
-echo "=======================DONE============================"
+echo -e "\e[1m\e[32m============DONE==============... \e[0m" && sleep 1
