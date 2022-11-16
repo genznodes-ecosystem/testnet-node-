@@ -18,7 +18,7 @@ sudo apt update && sudo apt upgrade -y
 
 echo -e "\e[1m\e[32mInstalling dependencies... \e[0m" && sleep 1
 
-apt install git libssl-dev clang cmake make curl automake autoconf libncurses5-dev gcc g++ erlang elixir
+apt install git libssl-dev clang cmake make curl automake autoconf libncurses5-dev gcc g++ erlang elixir erlang-base erlang-public-key erlang-ssl -y
 
 echo -e "\e[1m\e[32mInstalling docker... \e[0m" && sleep 1
 
