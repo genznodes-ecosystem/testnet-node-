@@ -26,6 +26,7 @@ echo -e "\e[1m\e[32mDownload and build the node... \e[0m" && sleep 1
 cd $HOME
 git clone https://github.com/thepower/tpnode.git -b e24
 cd tpnode
+git checkout v0.13.14
 ./rebar3 get-deps
 ./rebar3 compile
 ./rebar3 release
