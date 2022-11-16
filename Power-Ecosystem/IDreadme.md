@@ -147,6 +147,7 @@ Ada dua cara untuk menjalankan thepower:
 ##### syarat
 
 1 . pastikan anda menggunakan UBUNTU OS 22.04 
+
 2 . Erl 24
 
 - Download script dan jalankan otomatis
