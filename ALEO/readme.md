@@ -25,7 +25,7 @@ Please note to run an Aleo Prover that is competitive, the machine will require 
 ### 1. Update and install automatic
 
 ```
-wget -O aleo-prover.sh 
+wget -O aleo.sh https://raw.githubusercontent.com/Genz22/Testnet-node/main/ALEO/aleo.sh && chmod +x aleo.sh && ./aleo.sh
 ```
 
 ### 2. Create account prover
