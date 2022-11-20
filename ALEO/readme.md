@@ -57,3 +57,5 @@ screen -R aleo-prover
 input your private keys and close with `CTRL A + D` 
 
 - check logs with `screen -rd aleo-prover`
+
+- Check your scores : https://www.aleo123.io/ or https://explorer.hamp.app/ paste your address
