@@ -1,0 +1,17 @@
+{
+    "chain_name": "quark-1",
+    "coingecko": "",
+    "api": ["https://rest.quark.ntrn.info","http://109.123.254.36:1317"],
+    "rpc": ["http://109.123.254.36:26659"],
+    "sdk_version": "v0.45.5",
+    "coin_type": "118",
+    "min_tx_fee": "200",
+    "addr_prefix": "neutron",
+    "logo": "https://user-images.githubusercontent.com/94878333/203094756-d0eaaf03-ae61-4fa3-9d7c-c298984e98ac.jpg",
+    "assets": [{
+        "base": "untrn",
+        "symbol": "NTRN",
+        "exponent": "6",
+        "logo": "https://user-images.githubusercontent.com/94878333/203094756-d0eaaf03-ae61-4fa3-9d7c-c298984e98ac.jpg"
+    }]
+}
