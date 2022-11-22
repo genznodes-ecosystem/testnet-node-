@@ -1,8 +1,8 @@
 {
     "chain_name": "quark-1",
     "coingecko": "",
-    "api": ["https://rest.quark.ntrn.info","http://109.123.254.36:1317"],
-    "rpc": ["http://109.123.254.36:26659"],
+    "api": ["https://rest.quark.ntrn.info","https://test-neutron-api.genznodes.dev"],
+    "rpc": ["https://test-neutron-rpc.genznodes.dev"],
     "sdk_version": "v0.45.5",
     "coin_type": "118",
     "min_tx_fee": "200",
