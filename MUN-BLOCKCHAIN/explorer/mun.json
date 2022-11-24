@@ -1,0 +1,17 @@
+{
+    "chain_name": "testmun",
+    "coingecko": "",
+    "api": ["https://test-mun-api.genznodes.dev"],
+    "rpc": ["https://test-mun-rpc.genznodes.dev"],
+    "sdk_version": "v0.45.5",
+    "coin_type": "118",
+    "min_tx_fee": "200",
+    "addr_prefix": "mun",
+    "logo": "https://user-images.githubusercontent.com/94878333/203693537-90761f24-5f39-40b7-9be0-a3e154901132.png",
+    "assets": [{
+        "base": "utmun",
+        "symbol": "MUN",
+        "exponent": "6",
+        "logo": "https://user-images.githubusercontent.com/94878333/203693537-90761f24-5f39-40b7-9be0-a3e154901132.png"
+    }]
+}
