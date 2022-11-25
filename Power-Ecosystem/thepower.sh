@@ -17,8 +17,6 @@ sudo apt update && sudo apt upgrade -y
 
 echo -e "\e[1m\e[32minstall erlang and update dependencies... \e[0m" && sleep 2
 
-sudo apt purge erlang* -y
-
 apt install cmake clang gcc git curl libssl-dev build-essential automake autoconf libncurses5-dev elixir erlang erlang-base erlang-public-key erlang-ssl -y
 
 echo -e "\e[1m\e[32mDownload and build the node... \e[0m" && sleep 1
