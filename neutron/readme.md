@@ -128,7 +128,7 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" ~
 ### Download addrbook
 
 ```
-wget -O $HOME/.neutrond/config/addrbook.json
+wget -O $HOME/.neutrond/config/addrbook.json https://raw.githubusercontent.com/Genz22/Testnet-node/main/neutron/addrbook.json
 ```
 
 ### Create service file 
