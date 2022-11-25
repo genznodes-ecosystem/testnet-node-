@@ -170,9 +170,8 @@ Here you have two options:
 
 Pre-requiretments :
 
-1. ubuntu 22.04.1 LTS
-2. Erlang 24 or more
-
+1. Erlang 24 or more
+2. Node.config and genesis.txt
 
 #### automatic build node
 
