@@ -196,6 +196,18 @@ neutrond tx staking create-validator \
   --gas=auto -y
 ```
 
+- unjail
+
+```
+neutrond tx slashing unjail \
+  --broadcast-mode block \
+  --from <wallet> \
+  --broadcast-mode block \
+  --chain-id quark-1 \
+  --fees 200untrn \
+  --gas-adjustment 1 \
+  -y
+```  
 ### Delete node 
 
 ```
