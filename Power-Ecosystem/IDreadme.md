@@ -118,6 +118,18 @@ lalu biarkan berjalan sampai semua peserta menjalankan tea-client mungkin 24 jam
 screen -rd client
 ```
 
+Jika menggunakan Ubuntu 20 dan terjadi error dengan erl maka anda perlu install erlang dengan :
+
+```
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl wget gnupg apt-transport-https -y
+curl -fsSL https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | sudo gpg --dearmor -o /usr/share/keyrings/erlang.gpg
+echo "deb [signed-by=/usr/share/keyrings/erlang.gpg] https://packages.erlang-solutions.com/ubuntu $(lsb_release -cs) contrib" | sudo tee /etc/apt/sources.list.d/erlang.list && sudo apt update
+sudo apt install erlang -y
+```
+
+lalu jalan kan lagi tea client
+
 jika semua peserta sudah menjalankan tea-client anda akan mendapat dua file :
 
 1 . node.config
