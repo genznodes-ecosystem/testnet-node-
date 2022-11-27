@@ -51,7 +51,7 @@ guide in INDONESIAN 👇👇
 - Download and run ( automatic ) 
 
 ```
-wget -O start-node.sh https://raw.githubusercontent.com/Genz22/Testnet-node/main/Power-Ecosystem/start-node.sh && chmod +x start-node.sh && ./start-node.sh
+wget -O start-local-node.sh https://raw.githubusercontent.com/Genz22/Testnet-node/main/Power-Ecosystem/start-local-node.sh && chmod +x start-local-node.sh && ./start-local-node.sh
 ```
 
 - check docker 
@@ -125,6 +125,22 @@ screen -R client
 
 `CTRL A + D`
 
+If using Ubuntu 20 and an error occurs when running the script then you need to install erlang with:
+
+```
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl wget gnupg apt-transport-https -y
+curl -fsSL https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | sudo gpg --dearmor -o /usr/share/keyrings/erlang.gpg
+echo "deb [signed-by=/usr/share/keyrings/erlang.gpg] https://packages.erlang-solutions.com/ubuntu $(lsb_release -cs) contrib" | sudo tee /etc/apt/sources.list.d/erlang.list && sudo apt update
+sudo apt install erlang -y
+```
+
+check erlang with
+
+```
+erl
+```
+
 waiting for all participants to finish teaclient
 
 - check logs teaclient
@@ -172,22 +188,6 @@ Pre-requiretments :
 
 1. Erlang 24 or more
 2. Node.config and genesis.txt
-
-#### Install erlang for ubuntu 20.04 If you using ubuntu 22 you can skip this step 
-
-```
-sudo apt update && sudo apt upgrade -y
-sudo apt install curl wget gnupg apt-transport-https -y
-curl -fsSL https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | sudo gpg --dearmor -o /usr/share/keyrings/erlang.gpg
-echo "deb [signed-by=/usr/share/keyrings/erlang.gpg] https://packages.erlang-solutions.com/ubuntu $(lsb_release -cs) contrib" | sudo tee /etc/apt/sources.list.d/erlang.list && sudo apt update
-sudo apt install erlang -y
-```
-
-check erlang with
-
-```
-erl
-```
 
 #### automatic build node
 

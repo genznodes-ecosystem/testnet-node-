@@ -48,10 +48,10 @@ https://medium.com/the-power-official-blog/deinfra-testnet-verification-and-test
 
 #### 2.jalankan node lokal
 
-- download and run automatis
+- download and jalankan node lokal automatis
 
 ```
-wget -O start-node.sh https://raw.githubusercontent.com/Genz22/Testnet-node/main/Power-Ecosystem/start-node.sh && chmod +x start-node.sh && ./start-node.sh
+wget -O start-local-node.sh https://raw.githubusercontent.com/Genz22/Testnet-node/main/Power-Ecosystem/start-local-node.sh && chmod +x start-local-node.sh && ./start-local-node.sh
 ```
 
 - cek docker 
@@ -118,7 +118,7 @@ lalu biarkan berjalan sampai semua peserta menjalankan tea-client mungkin 24 jam
 screen -rd client
 ```
 
-Jika menggunakan Ubuntu 20 dan terjadi error dengan erl maka anda perlu install erlang dengan :
+Jika menggunakan Ubuntu 20 dan terjadi error saat menjalankan script maka anda perlu install erlang dengan :
 
 ```
 sudo apt update && sudo apt upgrade -y
@@ -128,7 +128,13 @@ echo "deb [signed-by=/usr/share/keyrings/erlang.gpg] https://packages.erlang-sol
 sudo apt install erlang -y
 ```
 
-lalu jalan kan lagi tea client
+check erlang :
+
+```
+erl
+```
+
+lalu jalan kan kembali tea-client
 
 jika semua peserta sudah menjalankan tea-client anda akan mendapat dua file :
 
@@ -158,9 +164,9 @@ Ada dua cara untuk menjalankan thepower:
 
 ##### syarat
 
-1 . pastikan anda menggunakan UBUNTU OS 22.04 
+1 . pastikan anda mempunyai node.config dan genesis.txt
 
-2 . Erl 24
+2 . Erl 24 + 
 
 - Download script dan jalankan otomatis
 
