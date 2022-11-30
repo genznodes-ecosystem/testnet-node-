@@ -3,6 +3,7 @@
 ### 1. Configuration
 
 ```
+cd
 cd inery-node/inery.setup/tools/
 ```
 
