@@ -257,7 +257,9 @@ humansd tx staking delegate <valoper_Address> <ammount> --from wallet --chain-id
 humansd tx distribution withdraw-rewards <valoper_Address> --commission --from wallet --gas-prices 0.025uheart --broadcast-mode block --chain-id $HUMAN_CHAIN_ID -y
 ```
 
-### edit validator 
+### edit validator
+
+```
 humansd tx staking edit-validator \
   --moniker $NODENAME \
   --identity <your_keybase_id> \
@@ -265,6 +267,7 @@ humansd tx staking edit-validator \
   --details "<your_validator_description>" \
   --chain-id $HUMAN_CHAIN_ID \
   --from wallet -y
+```
 
 ### unjail
 
