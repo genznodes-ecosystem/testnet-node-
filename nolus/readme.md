@@ -227,7 +227,10 @@ nolusd tx staking delegate <valoper_Address> <ammount> --from wallet --chain-id 
 nolusd tx distribution withdraw-rewards <valoper_Address> --commission --from wallet --gas-prices 0.0042unls --broadcast-mode block --chain-id $NOLUS_CHAIN_ID -y
 ```
 
-### edit validator 
+=======
+### edit validator
+
+```
 nolusd tx staking edit-validator \
   --moniker $NODENAME \
   --identity <your_keybase_id> \
@@ -235,6 +238,7 @@ nolusd tx staking edit-validator \
   --details "<your_validator_description>" \
   --chain-id $NOLUS_CHAIN_ID \
   --from wallet -y
+```
 
 ### unjail
 
