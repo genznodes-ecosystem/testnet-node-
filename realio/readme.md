@@ -233,7 +233,9 @@ realio-networkd tx staking delegate <valoper_Address> <ammount> --from wallet --
 nolusd tx distribution withdraw-rewards <valoper_Address> --commission --from wallet --gas-prices 7ario --broadcast-mode block --chain-id $REALIO_CHAIN_ID -y
 ```
 
-### edit validator 
+### edit validator
+
+```
 realio-networkd tx staking edit-validator \
   --moniker $NODENAME \
   --identity <your_keybase_id> \
@@ -241,6 +243,7 @@ realio-networkd tx staking edit-validator \
   --details "<your_validator_description>" \
   --chain-id $REALIO_CHAIN_ID \
   --from wallet -y
+```
 
 ### unjail
 
