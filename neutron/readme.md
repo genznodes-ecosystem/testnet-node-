@@ -6,7 +6,7 @@
     <img src="https://user-images.githubusercontent.com/94878333/202221381-f685d4eb-0888-4544-a466-823f1898eb50.jpg">
 </p>
 
-# How to join Neuron Guide to run Node 
+# How to join Neutron Guide to run Node 
 
 Neutron Testnet quark-1
 
@@ -18,8 +18,6 @@ Hardware
 4 Cores
 32 GB RAM
 2x512 GB SSD
-
-## Build manual
 
 ### Download and update dependencies
 
