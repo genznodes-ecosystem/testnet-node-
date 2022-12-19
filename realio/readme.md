@@ -113,7 +113,7 @@ wget -O $HOME/.realio-network/config/addrbook.json https://raw.githubusercontent
 SEEDS="aa194e9f9add331ee8ba15d2c3d8860c5a50713f@143.110.230.177:26656"
 PEERS="0b45c2a8b4e644929f5e439603af1fe6fea5ebce@154.26.138.73:26656"
 
-sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.reakio-network/config/config.toml
+sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.realio-network/config/config.toml
 ```
 
 ## set config pruning
