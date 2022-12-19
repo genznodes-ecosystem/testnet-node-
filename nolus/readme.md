@@ -228,7 +228,7 @@ nolusd tx distribution withdraw-rewards <valoper_Address> --commission --from wa
 ```
 
 ### edit validator 
-terpd tx staking edit-validator \
+nolusd tx staking edit-validator \
   --moniker $NODENAME \
   --identity <your_keybase_id> \
   --website "<your_website>" \
@@ -236,7 +236,7 @@ terpd tx staking edit-validator \
   --chain-id $NOLUS_CHAIN_ID \
   --from wallet -y
 
-## unjail
+### unjail
 
 ```
 nolusd tx slashing unjail \

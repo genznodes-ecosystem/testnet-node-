@@ -1,2 +1,0 @@
-# build thepower via docker 
-

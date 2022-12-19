@@ -17,6 +17,25 @@ chain id = sge-testnet-1
 | 25 GB HDD | 100 GB HDD |
 | 1.4 GHz CPU | 2.0 GHz x2 CPU |
 
+## setting vars
+
+`<YOUR_MONIKER>` change with your moniker / name of your validator in explorer
+
+```
+NODENAME=<YOUR_MONIKER>
+```
+
+save and import variable
+
+```
+echo "export NODENAME=$NODENAME" >> $HOME/.bash_profile
+if [ ! $WALLET ]; then
+	echo "export WALLET=wallet" >> $HOME/.bash_profile
+fi
+echo "export SGE_CHAIN_ID=sge-testnet-1" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+```
+
 ## Download and update dependencies
 
 ```
@@ -59,10 +78,17 @@ check version
 sged version --long
 ```
 
+## config app
+
+```
+sged config chain-id $SGE_CHAIN_ID
+sged config keyring-backed test
+```
+
 ## init 
 
 ```
-sged init <moniker> --chain-id sge-testnet-1
+sged init <moniker> --chain-id $SGE_CHAIN_ID
 ```
 
 ## Create wallet
@@ -99,7 +125,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which sged) start $HOME/.sge
+ExecStart=$(which sged) start --home $HOME/.sge
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -160,7 +186,29 @@ sged tx staking create-validator \
 
 ## Useful commands
 
-SOON !
+- check logs 
+
+```
+journalctl -fu sged -o cat
+```
+
+- check node info
+
+```
+sged status |& jq
+```
+
+- delegate
+
+```
+sged tx staking delegate <valoper_Address> <ammount> --from wallet --chain-id $SGE_CHAIN_ID --fees 200usge -y
+```
+
+- withdraw reward and commission
+
+```
+sged tx distribution withdraw-rewards <valoper_Address> --commission --from wallet --fees 200usge --broadcast-mode block --chain-id $SGE_CHAIN_ID -y
+```
 
 ## Delete node ( dyor )
 
@@ -169,8 +217,7 @@ sudo systemctl stop sged
 sudo systemctl disable sged
 rm /etc/systemd/system/sged.service
 sudo systemctl daemon-reload
-cd $HOME
-rm -rf sge
-rm -rf .sge
+rm -rf $HOME/sge
+rm -rf $HOME/.sge
 rm -rf $(which sged)
 ```
