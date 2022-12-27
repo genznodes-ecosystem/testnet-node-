@@ -20,12 +20,12 @@ echo -e "\e[1m\e[32minstall erlang and update dependencies... \e[0m" && sleep 2
 apt install cmake clang gcc git curl libssl-dev build-essential automake autoconf libncurses5-dev elixir erlang erlang-base erlang-public-key erlang-ssl -y
 
 echo -e "\e[1m\e[32mDownload and build the node... \e[0m" && sleep 1
-# Build node v0.13.15
+# Build node v0.14.2
 cd $HOME
 rm -rf tpnode
 git clone https://github.com/thepower/tpnode.git -b e24
 cd tpnode
-git checkout v0.13.15
+git checkout v0.14.2
 ./rebar3 get-deps
 ./rebar3 compile
 ./rebar3 release

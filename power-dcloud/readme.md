@@ -26,7 +26,7 @@ https://medium.com/the-power-official-blog/deinfra-testnet-verification-and-test
 -------------------------
 
 guide in INDONESIAN 👇👇
->[INDONESIAN](https://github.com/Genz22/Testnet-node/blob/main/Power-Ecosystem/IDreadme.md)
+>[INDONESIAN](https://github.com/Genz22/Testnet-node/blob/main/power-dcloud/IDreadme.md)
 
 
 # First need go to bot and complete task
