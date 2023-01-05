@@ -1,1 +1,5 @@
-sss
+
+
+
+
+# HOW TO JOIN LAVA TESTNET
