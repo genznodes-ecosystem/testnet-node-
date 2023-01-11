@@ -100,7 +100,7 @@ humansd init $NODENAME --chain-id $HUMAN_CHAIN_ID
 - genesis
 
 ```
-curl -s https://rpc-testnet.humans.zone/genesis | jq -r .result.genesis > $HOME/.humans/genesis.json
+curl -s https://test-human-rpc.genznodes.dev/genesis | jq -r .result.genesis > $HOME/.humans/genesis.json
 ```
 
 - addrbook
