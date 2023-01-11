@@ -106,7 +106,7 @@ curl -s https://test-human-rpc.genznodes.dev/genesis | jq -r .result.genesis > $
 - addrbook
 
 ```
-curl -o addrbook.json https://github.com/Genz22/Testnet-node/blob/main/human/addrbook.json > $HOME/.human/config/addrbook.json
+curl -o addrbook.json https://raw.githubusercontent.com/Genz22/Testnet-node/main/human/addrbook.json > $HOME/.human/config/addrbook.json
 ```
 
 ## set peers and seed
