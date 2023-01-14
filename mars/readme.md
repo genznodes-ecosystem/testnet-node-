@@ -21,9 +21,219 @@ A production-ready server typically requires:
 
 - Linux operating system. 
 
-## Auto installer
+# setting vars
+
+`<YOUR_MONIKER>` change with your moniker / name of your validator in explorer
+
+```
+NODENAME=<YOUR_MONIKER>
+```
+
+save and import variable
+
+```
+echo "export NODENAME=$NODENAME" >> $HOME/.bash_profile
+if [ ! $WALLET ]; then
+	echo "export WALLET=wallet" >> $HOME/.bash_profile
+fi
+echo "export MARS_CHAIN_ID=ares-1" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+```
+
+# Install and update dependencies
+
+```
+sudo apt update && sudo apt upgrade -y && sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
+```
+
+# Install Go
+
+```
+ver="1.19"
+cd $HOME
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile
+source ~/.bash_profile
+```
+
+check golang
+
+```
+go version
+```
+
+# Install app
+
+```
+git clone https://github.com/mars-protocol/hub.git
+cd hub
+git checkout v1.0.0-rc7
+make install
+```
+
+check if already marsd
+
+```
+marsd version --long
+```
+
+# config node
+
+```
+marsd config chain-id $MARS_CHAIN_ID
+marsd config keyring-backend test
+```
+
+# init
+
+```
+marsd init $NODENAME --chain-id $MARS_CHAIN_ID
+```
+
+## get genesis and addrbook
+
+- genesis
+
+```
+curl -s https://raw.githubusercontent.com/mars-protocol/networks/main/ares-1/genesis.json > $HOME/.mars/config/genesis.json
+```
+
+- addrbook
 
 ```
 NA
 ```
 
+## set peers and seed
+
+```
+SEEDS=
+PEERS=5dd3b89f9496b13c9e82becd6c201099805d789c@109.123.254.36:26656
+
+sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.nolus/config/config.toml
+```
+
+## set config pruning
+
+```
+PRUNING="custom"
+PRUNING_KEEP_RECENT="100"
+PRUNING_INTERVAL="10"
+
+sed -i -e "s/^pruning *=.*/pruning = \"$PRUNING\"/" $HOME/.mars/config/app.toml
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \
+\"$PRUNING_KEEP_RECENT\"/" $HOME/.mars/config/app.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
+\"$PRUNING_INTERVAL\"/" $HOME/.mars/config/app.toml
+```
+
+# Set gas price
+sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0umars\"/" $HOME/.mars/config/app.toml
+
+# index ( optional )
+
+indexer="null"
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.mars/config/config.toml
+
+# reset data
+
+```
+marsd tendermint unsafe-reset-all --home $HOME/.mars
+```
+
+## create service file and start node
+
+- create 
+
+```
+sudo tee /etc/systemd/system/marsd.service > /dev/null <<EOF
+[Unit]
+Description=marsd
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$(which marsd) start --home $HOME/.mars
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+- start
+
+```
+sudo systemctl daemon-reload
+sudo systemctl enable marsd
+sudo systemctl restart marsd
+sudo journalctl -fu marsd -o cat
+```
+
+- check node
+
+```
+marsd status | jq
+```
+
+## add keys or import keys
+
+- create
+
+```
+marsd keys add wallet
+```
+
+or
+
+- import 
+
+```
+marsd keys add wallet --recover
+```
+
+## Create validator
+
+- check sync info
+
+```
+marsd status | jq -r .SyncInfo
+```
+
+- faucet
+
+https://faucet.marsprotocol.io/
+
+- create validator
+
+```
+marsd tx staking create-validator \
+  --pubkey $(marsd tendermint show-validator) \
+  --moniker $NODENAME \
+  --details "" \
+  --identity "" \
+  --website "" \
+  --min-self-delegation 1 \
+  --commission-rate "0.05" \
+  --commission-max-rate "0.20" \
+  --commission-max-change-rate "0.01" \
+  --amount 1000000umars \
+  --from wallet \
+  --chain-id ares-1 \ 
+  --gas auto \
+  --gas-adjustment 1.4 \
+  --gas-prices 0umars -y
+```
+
+- check your validator
+
+https://testnet-explorer.genznodes.dev/mars-testnet/staking
+
+## Usefull commands
+
+NA

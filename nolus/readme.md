@@ -171,7 +171,6 @@ nolusd keys add wallet
 nolusd keys add wallet --recover
 ```
 
-
 ## Create validator
 
 - faucet

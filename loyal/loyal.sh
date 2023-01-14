@@ -16,11 +16,11 @@ echo "=================================================="
 sleep 3
 
 if [ ! $NODENAME ]; then
-	  read -p "Name your node: " NODENAME
+	  read -p "Name your Moniker: " NODENAME
 	  echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
 fi
 
-echo -e "Nama Node: \e[1m\e[32m$NODENAME\e[0m"
+echo -e "Moniker: \e[1m\e[32m$NODENAME\e[0m"
 echo -e "Chain ID: \e[1m\e[32mloyal-1\e[0m"
 echo '================================================='
 
@@ -66,7 +66,7 @@ sleep 1
 # Config app
 echo -e "\e[1m\e[32m CONFIG APP... \e[0m" && sleep 1
 loyald config chain-id loyal-1
-loyald config keyring-backend file
+loyald config keyring-backend test
 loyald init $NODENAME --chain-id loyal-1
 
 # Download addrbook & genesis
