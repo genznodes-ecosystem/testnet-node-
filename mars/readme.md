@@ -185,6 +185,30 @@ sudo journalctl -fu marsd -o cat
 marsd status | jq
 ```
 
+# StateSync ( optional )
+
+```
+systemctl stop marsd
+marsd tendermint unsafe-reset-all
+
+SNAP_RPC="https://test-mars-rpc.genznodes.dev:443"
+
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+PEERS=5dd3b89f9496b13c9e82becd6c201099805d789c@109.123.254.36:26656
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.mars/config/config.toml
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.mars/config/config.toml
+
+systemctl restart marsd
+journalctl -fu marsd -o cat
+```
+
 ## add keys or import keys
 
 - create
