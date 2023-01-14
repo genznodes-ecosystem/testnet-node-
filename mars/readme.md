@@ -131,13 +131,17 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \
 ```
 
 # Set gas price
+
+```
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0umars\"/" $HOME/.mars/config/app.toml
+```
 
 # index ( optional )
 
+```
 indexer="null"
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.mars/config/config.toml
-
+```
 # reset data
 
 ```
