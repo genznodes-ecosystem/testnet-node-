@@ -20,8 +20,8 @@
    
 ## Touch me 
 
-* [Website](genznodes.dev)
-* [Email](mailto:genzbit@genznodes.dev)
+* [Website](https://genznodes.dev)
+* [Email](mailto:genznodes@gmail.com)
 
 
 
