@@ -157,4 +157,20 @@ curl -s localhost:26657/status |& jq
 
 must `"catching_up": false`
 
-- 
+- create wallet
+
+```
+namada wallet address gen --alias $WALLET
+```
+
+- get faucet
+
+```
+namada client transfer \
+  --source faucet \
+  --target $WALLET \
+  --token NAM \
+  --amount 1000 \
+  --signer $WALLET
+```
+
