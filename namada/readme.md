@@ -163,7 +163,7 @@ must `"catching_up": false`
 namada wallet address gen --alias $WALLET
 ```
 
-- get faucet
+- get faucet , run validator
 
 ```
 namada client transfer \
@@ -173,4 +173,33 @@ namada client transfer \
   --amount 1000 \
   --signer $WALLET
 ```
+
+```
+namada client init-validator --alias $VALIDATOR_ALIAS --source $WALLET --commission-rate 0.05 --max-commission-rate-change 0.01 --gas-limit 10000000
+```
+
+```
+namada client transfer \
+    --token NAM \
+    --amount 1000 \
+    --source faucet \
+    --target $VALIDATOR_ALIAS \
+    --signer $VALIDATOR_ALIAS
+```
+
+- check balances
+
+```
+namada client balance --owner $VALIDATOR_ALIAS --token NAM
+```
+
+# init stake
+
+```
+namada client bond \
+  --validator $VALIDATOR_ALIAS \
+  --amount 1500 \
+  --gas-limit 10000000
+```
+
 
