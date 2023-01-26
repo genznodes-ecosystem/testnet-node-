@@ -15,7 +15,7 @@
 
 ```
 echo "export VALIDATOR_ALIAS=YOUR_MONIKER" >> ~/.bash_profile
-echo "export NAMADA_TAG=v0.13.2" >> ~/.bash_profile
+echo "export NAMADA_TAG=v0.13.3" >> ~/.bash_profile
 echo "export TM_HASH=v0.1.4-abciplus" >> ~/.bash_profile
 echo "export CHAIN_ID=public-testnet-2.1.4014f207f6d" >> ~/.bash_profile
 echo "export WALLET=wallet" >> ~/.bash_profile
@@ -84,7 +84,7 @@ namada --version
 ```
 
 Output
-> Namada v0.13.2
+> Namada v0.13.3
 
 # Install tendermint
 
