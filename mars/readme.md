@@ -113,7 +113,7 @@ NA
 SEEDS=
 PEERS=5dd3b89f9496b13c9e82becd6c201099805d789c@109.123.254.36:26656
 
-sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.nolus/config/config.toml
+sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.mars/config/config.toml
 ```
 
 ## set config pruning
