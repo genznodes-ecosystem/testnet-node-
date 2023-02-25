@@ -57,8 +57,9 @@ go version
 
 ```
 cd $HOME
-git clone https://github.com/realiotech/realio-network.git && cd realio-network
-git checkout v0.6.3
+git clone https://github.com/realiotech/realio-network.git realio
+cd realio
+git checkout v0.7.2
 make install
 ```
 
