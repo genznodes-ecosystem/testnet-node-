@@ -45,7 +45,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt install curl tar wget clang p
 ## install go
 
 ```
-ver="1.18"
+ver="1.19.5"
 cd $HOME
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
@@ -67,7 +67,7 @@ go version
 cd $HOME
 git clone https://github.com/Nolus-Protocol/nolus-core
 cd nolus-core
-git checkout v0.1.39
+git checkout v0.1.43
 make install
 ```
 
