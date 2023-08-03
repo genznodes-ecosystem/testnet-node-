@@ -1,0 +1,1 @@
+# vinuchain testnet 
