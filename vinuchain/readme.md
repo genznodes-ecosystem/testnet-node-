@@ -1,4 +1,14 @@
-# Guide installation node vinuchain testnet
+# Installation node vinuchain testnet
+
+## Firewall port
+
+here I use 1212 as p2p
+
+```
+sudo ufw allow ssh
+sudo ufw allow 1212/tcp
+sudo ufw enable
+```
 
 ## Install dependencies
 
@@ -19,7 +29,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile
 source ~/.bash_profile
 ```
 
-```
+```bash
 go version
 ```
 
@@ -34,11 +44,13 @@ make
 mv ./build/opera $HOME/go/bin
 ```
 
-- check opera
+- check opera version
 
 ```bash
-opera version
+opera version | grep Version | head -1
 ```
+
+> Version: 1.1.2-rc.3
 
 ## config and start node
 
@@ -49,7 +61,7 @@ mkdir $HOME/.opera
 ```
 
 ```bash
-wget -O $HOME/.opera/genesis.g "https://github.com/genznodes-ecosystem/testnet-node-/raw/main/vinuchain/genesis-testnet.g"
+wget -O $HOME/.opera/genesis-testnet.g "https://github.com/genznodes-ecosystem/testnet-node-/raw/main/vinuchain/genesis-testnet.g"
 ```
 
 - start in screen
@@ -59,7 +71,7 @@ screen -S opera
 ```
 
 ```bash
-opera --syncmode full --port 1212 --nat any --genesis.allowExperimental --genesis $HOME/.opera/genesis.g --bootnodes enode://3c4da2358ce3c3e117b03e4c87dff1d8d767a684e3c94f5eb29a4e88f549ba2f5a458eab60df637417411bb59b52f94542cf7d22f0dd1a10e45d5ae71c66e334@54.203.151.219:3000
+opera --syncmode full --gcmode full --port 1212 --nat any --genesis.allowExperimental --genesis $HOME/.opera/genesis-testnet.g --bootnodes enode://63f3300eef131b0c8350e29dcd02dd274611efff76a56ad0c5646d5cfef123860ff2457097db2bfbb8b406630814a306f8c97025d52034400ece46eed603c5fb@54.203.151.219:3000
 ```
 
 - close screen with `CTRL A + D`
