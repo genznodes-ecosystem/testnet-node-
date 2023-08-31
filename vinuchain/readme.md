@@ -6,7 +6,7 @@ here I use 1212 as p2p
 
 ```
 sudo ufw allow ssh
-sudo ufw allow 1212/tcp
+sudo ufw allow 1212
 sudo ufw enable
 ```
 
@@ -129,7 +129,7 @@ personal.unlockAccount("WALLET_ADDRESS", "PASSWORD")
 - create validator
 
 ```
-tx = sfcc.createValidator("VALIDATOR_PUBKEY", {from:"WALLET_ADDRESS", value:web3.toWei("100000.0", "ftm")})
+tx = sfcc.createValidator("VALIDATOR_PUBKEY", {from:"WALLET_ADDRESS", value:web3.toWei("200000.0", "ftm")})
 ```
 
 > TXHASH
@@ -172,7 +172,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which opera) --syncmode full --identity NODE_NAME --gcmode full --port 1212 --genesis.allowExperimental --genesis $HOME/.opera/genesis.g --validator.id VALIDATOR_ID --validator.pubkey YOUR_PUBKEY --validator.password $HOME/.opera/keystore/pwd.txt --bootnodes enode://3c4da2358ce3c3e117b03e4c87dff1d8d767a684e3c94f5eb29a4e88f549ba2f5a458eab60df637417411bb59b52f94542cf7d22f0dd1a10e45d5ae71c66e334@54.203.151.219:3000
+ExecStart=$(which opera) --syncmode full --identity NODE_NAME --gcmode full --port 1212 --genesis.allowExperimental --genesis $HOME/.opera/genesis.g --validator.id VALIDATOR_ID --validator.pubkey YOUR_PUBKEY --validator.password $HOME/.opera/keystore/pwd.txt --bootnodes enode://63f3300eef131b0c8350e29dcd02dd274611efff76a56ad0c5646d5cfef123860ff2457097db2bfbb8b406630814a306f8c97025d52034400ece46eed603c5fb@54.203.151.219:3000
 Restart=always
 RestartSec=3
 LimitNOFILE=65535
