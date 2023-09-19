@@ -61,7 +61,7 @@ mkdir $HOME/.opera
 ```
 
 ```bash
-wget -O $HOME/.opera/genesis.g "https://vinu-blockchain-genesis.s3.us-east-1.amazonaws.com/genesis-vinu-test-mainnet.g"
+wget -O $HOME/.opera/genesis.g "https://vinu-blockchain-genesis.s3.us-east-1.amazonaws.com/vitainu-genesis-testnet.g"
 ```
 
 - start in screen
@@ -71,7 +71,7 @@ screen -S opera
 ```
 
 ```bash
-opera --syncmode full --gcmode full --port 1212 --nat any --genesis.allowExperimental --genesis $HOME/.opera/genesis.g --bootnodes enode://0a46ed3a3736a43332c2376b66df3de51e33761c464c35aae390f13839b7c51da8e976433aa0c48e17a389b4d09d5c039d1cbf49991595959ce241293c02ff3b@54.203.151.219:3000
+opera --syncmode full --gcmode full --port 1212 --nat any --genesis.allowExperimental --genesis $HOME/.opera/genesis.g --bootnodes enode://c7e3e7ab29d1ee7693a11d1a6d019db543f71c428b0f323f082e9d13d10cc2d6cc11cdb1dd27e21746afeb0c48435d0f55ad01c2b89162fdac0d0f7c2f4744d0@54.203.151.219:3000
 ```
 
 - close screen with `CTRL A + D`
