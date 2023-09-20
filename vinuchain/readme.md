@@ -172,7 +172,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which opera) --syncmode full --identity NODE_NAME --gcmode full --port 1212 --genesis.allowExperimental --genesis $HOME/.opera/genesis.g --validator.id VALIDATOR_ID --validator.pubkey YOUR_PUBKEY --validator.password $HOME/.opera/keystore/pwd.txt --bootnodes enode://0a46ed3a3736a43332c2376b66df3de51e33761c464c35aae390f13839b7c51da8e976433aa0c48e17a389b4d09d5c039d1cbf49991595959ce241293c02ff3b@54.203.151.219:3000
+ExecStart=$(which opera) --syncmode full --identity NODE_NAME --gcmode full --port 1212 --genesis.allowExperimental --genesis $HOME/.opera/genesis.g --validator.id VALIDATOR_ID --validator.pubkey YOUR_PUBKEY --validator.password $HOME/.opera/keystore/pwd.txt --bootnodes enode://c7e3e7ab29d1ee7693a11d1a6d019db543f71c428b0f323f082e9d13d10cc2d6cc11cdb1dd27e21746afeb0c48435d0f55ad01c2b89162fdac0d0f7c2f4744d0@54.203.151.219:3000
 Restart=always
 RestartSec=3
 LimitNOFILE=65535
